@@ -1,6 +1,26 @@
-" enable pathogen
-call pathogen#runtime_append_all_bundles()
-call pathogen#helptags()
+
+" ---------- plugins ------------------------------------------
+"pathogen
+execute pathogen#infect()
+
+"NERDtree
+autocmd vimenter * if !argc() | NERDTree | endif
+autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
+map <C-n> :NERDTreeToggle<CR>
+
+"neocomplcache
+let g:neocomplcache_enable_at_startup = 1
+
+"tagbar
+nmap <F8> :TagbarToggle<CR>
+
+"powerline
+let g:Powerline_symbols = 'fancy'
+
+"Ctrlp
+let g:ctrlp_map = '<c-p>'
+let g:ctrlp_cmd = 'CtrlP'
+" ---------- plugins ------------------------------------------
 
 
 " 语法高亮
@@ -58,7 +78,7 @@ set gdefault
 
 " 我的状态行显示的内容（包括文件类型和解码）
 " set statusline=%F%m%r%h%w\ [FORMAT=%{&ff}]\ [TYPE=%Y]\ [POS=%l,%v][%p%%]\ %{strftime(\"%d/%m/%y\ -\ %H:%M\")}
-set statusline=[%F]%y%r%m%*%=[Line:%l/%L,Column:%c][%p%%]
+" set statusline=[%F]%y%r%m%*%=[Line:%l/%L,Column:%c][%p%%]
 
 " 总是显示状态行
 set laststatus=2
@@ -67,7 +87,7 @@ set laststatus=2
 set ruler           
 
 " 命令行（在状态行下）的高度，默认为1，这里是2
-set cmdheight=2
+set cmdheight=1
 
 " 侦测文件类型
 filetype on
