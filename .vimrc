@@ -1,4 +1,3 @@
-
 " ---------- plugins ------------------------------------------
 "pathogen
 execute pathogen#infect()
@@ -7,6 +6,7 @@ execute pathogen#infect()
 autocmd vimenter * if !argc() | NERDTree | endif
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
 map <C-n> :NERDTreeToggle<CR>
+let NERDTreeShowBookmarks=1
 
 "neocomplcache
 let g:neocomplcache_enable_at_startup = 1
@@ -14,14 +14,27 @@ let g:neocomplcache_enable_at_startup = 1
 "tagbar
 nmap <F8> :TagbarToggle<CR>
 
-"powerline
+"powerline{
+set guifont=PowerlineSymbols\ for\ Powerline
+set nocompatible
+
 let g:Powerline_symbols = 'fancy'
+let g:Powerline_theme = 'solarized256'
+let g:Powerline_colorscheme = 'solarized256'
+"}
 
 "Ctrlp
 let g:ctrlp_map = '<c-p>'
 let g:ctrlp_cmd = 'CtrlP'
 " ---------- plugins ------------------------------------------
 
+"修改终端显示支持256色，有些colorscheme是256色的
+set t_Co=256
+
+" 永远显示tab栏
+set showtabline=1
+
+set foldmethod=syntax
 
 " 语法高亮
 syntax on
@@ -73,6 +86,7 @@ set incsearch
 set gdefault
 
 "编码设置
+set fileencoding=utf-8
 
 "语言设置
 
