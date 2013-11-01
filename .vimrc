@@ -51,6 +51,15 @@ syntax on
 "设置配色
 colorscheme molokai 
 
+"样式细节
+hi TabLineFill ctermfg=green
+hi Comment ctermfg=blue
+
+"tab样式选项
+"TabLine
+"TabLineSel
+"TabLineFill
+
 "去掉输入错误的提示声音
 set noeb
 
@@ -140,7 +149,7 @@ set backspace=2
 set whichwrap+=<,>,h,l
 
 "可以在buffer的任何地方使用鼠标（类似office中在工作区双击鼠标定位）
-set mouse=a
+"set mouse=a
 set selection=exclusive
 set selectmode=mouse,key
 
